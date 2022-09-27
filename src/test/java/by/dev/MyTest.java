@@ -3,6 +3,7 @@ package by.dev;
 import org.testng.annotations.Test;
 
 public class MyTest extends BaseTest {
+
     @Test
     public void getContacts() {
         CompanyListPage companyListPage = new CompanyListPage().openPage();
@@ -14,7 +15,8 @@ public class MyTest extends BaseTest {
             String name = companyPage.getName();
             String site = companyPage.getSite();
             String email = companyPage.getEmail();
-            System.out.printf("%s %s %s", name, site, email);
+            System.out.printf("%s; %s; %s\n", name, site, email);
+            companyListPage.switchToPreviousTab();
         }
     }
 }

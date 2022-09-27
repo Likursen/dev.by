@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class CompanyListPage extends BasePage {
@@ -24,8 +25,9 @@ public class CompanyListPage extends BasePage {
     }
 
     public CompanyPage openCompany(int num) {
-        getBoardItem(num)
+        Objects.requireNonNull(getBoardItem(num))
                 .openCompany();
+        sleep(8000);
         return new CompanyPage();
     }
 
@@ -57,7 +59,7 @@ public class CompanyListPage extends BasePage {
         }
 
         private void openCompany() {
-            companyName.click();
+            clickAndOpenInNewTab(companyName);
         }
     }
 }
