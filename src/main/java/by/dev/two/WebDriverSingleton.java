@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class WebDriverSingleton {
-    protected static final Duration WAIT_TIMEOUT_SECONDS = Duration.ofSeconds(15);
+    protected static final Duration WAIT_TIMEOUT_SECONDS = Duration.ofSeconds(5);
     private static WebDriver webDriver;
 
     private WebDriverSingleton() {
